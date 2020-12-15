@@ -61,7 +61,7 @@ http://ping.mat1.repl.co/#
         <p style="position: absolute; font-family: Montserrat; top: 3px; right: 15px; color: black; margin: 0px; font-size: 35px;" onclick="document.getElementById('updateDiv').style.display = 'none'; nonupdate()">&times;</p>
         <img src="acelogo.png" style="width: 60px; padding: 10px; margin-left: 10px;">
         <p style="font-family: Montserrat; font-weight: 600; color: #e60f0f; position: absolute; top: 0px; left: 100px;">Update Available</p>
-        <p style="font-family: Montserrat; font-weight: 600; color: black; position: absolute; top: 55px; left: 20px; font-size: 14px; width: 255px; text-align: center;">Update 1.10.3 has been released!</p>
+        <p style="font-family: Montserrat; font-weight: 600; color: black; position: absolute; top: 55px; left: 20px; font-size: 14px; width: 255px; text-align: center;">Update 2.0.3 has been released!</p>
         <button type="button" style="width: 255px; height: 35px; border-radius: 20px; background-color: #e60f0f; border: none; position: absolute; left: 20px; top: 115px; box-shadow: 0 0 20px rgba(230, 15, 15, 0.4); color: white; font-family: Montserrat;" onclick="document.getElementById('updateDiv').style.display = 'none'; load()">Install</button>
       </div>
   </body>
@@ -122,27 +122,27 @@ http://ping.mat1.repl.co/#
 var date = new Date();
 var month = date.getMonth();
 
-//Janember is 11
+//January is 11
 function checkdate(){
-  if (month == 10) {
+  if (month == 11) {
     console.log("Date is a match-continuing auth");
     if (getCookie('FirstTime') == "True") {
-      document.cookie = "FirstTime=False; expires=Fri, 1 Jan 2021 12:00:00 UTC";
+      document.cookie = "FirstTime=False; expires=Mon, 1 Feb 2021 12:00:00 UTC";
       console.log("Cookie is True");
-      document.cookie = "update=InComplete; expires=Fri, 1 Jan 2021 12:00:00 UTC";
+      document.cookie = "update=InComplete; expires=Mon, 1 Feb 2021 12:00:00 UTC";
       console.log(month);
       console.log("Assigned Date is met and Data is set");
       updateLoad();
     } 
     else {
       if (getCookie('FirstTime') == "False") {
-        document.cookie = "FirstTime=False; expires=Fri, 1 Jan 2021 12:00:00 UTC";
+        document.cookie = "FirstTime=False; expires=Mon, 1 Feb 2021 12:00:00 UTC";
         document.getElementById("updateDiv").style.display = "none";
         console.log("Cookie is False");
         updateLoad()
       }
       else {
-        document.cookie = "FirstTime=True; expires=Fri, 1 Jan 2021 12:00:00 UTC";
+        document.cookie = "FirstTime=True; expires=Mon, 1 Feb 2021 12:00:00 UTC";
         document.getElementById("updateDiv").style.display = "none";
         console.log("Cookie not found Data added");
         checkdate()
