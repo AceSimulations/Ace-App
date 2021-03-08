@@ -12,6 +12,10 @@ const Database = require('@replit/database')
 const db = new Database()
 const Cryptr = require('cryptr')
 const cryptr = new Cryptr('cIeJJQpIpHo95UL9SZyq')
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 var transport = nodemailer.createTransport({
   service: 'gmail',
@@ -299,10 +303,28 @@ app.get('/authorize', async (req, res) => {
   }
 })
 
+app.post('/saveto', (req, res) => {
+  var data = req.body.destinations
+  console.log(data)
+  fs.writeFileSync('public/destinations/destinations.json', JSON.stringify(data))
+})
+
 
 app.get('/connect', (req, res) => {
   if (req.query.query === 'get-destinations') {
-    res.sendFile(path.join(__dirname + '/public/destinations/destinationList.json'))
+    console.log('ACCESSED /get-destinations')
+    if (req.query.api === "@C3@iR1in3$") {
+      console.log('ACCESSED key')
+      res.send({
+        data: JSON.parse(fs.readFileSync(path.join(__dirname + '/public/destinations/destinations.json'))),
+        parseType: 1
+      })
+    } else {
+      res.send({
+        response: undefined,
+        err: "Invalid key."
+      })
+    }
   } else if (req.query.query === 'static-book') {
     var staticInfo = []
     staticInfo.push(JSON.parse(req.query.info))
@@ -487,6 +509,11 @@ app.post('/backup', (req, res) => {
   res.send({
     status: "success"
   })
+})
+
+app.get('/sendBookDestinations', (req, res) => {
+  destinations = fs.readFileSync(__dirname + '/public/destinations/destinations.js')
+  res.send(destinations)
 })
 
 

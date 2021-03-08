@@ -1,8 +1,11 @@
 [
   {
     "query": "huntsville",
-    "name": "Huntsville, AL (HSV)",
+    "name": "Huntsville, AL (HSV)", 
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/fxb-150e_2_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "HSV",
     "event": [
       {
         "date": "2020-10-01",
@@ -45,7 +48,10 @@
   {
     "query": "anchorage",
     "name": "Anchorage, AK (ANC)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/panc8_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "ANC",
     "event": [
       {
         "date": "2020-10-01",
@@ -94,7 +100,10 @@
   {
     "query": "honolulu",
     "name": "Honolulu, HI (HNL)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/honolulu_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "HNL",
     "event": [
       {
         "date": "2020-10-01",
@@ -143,7 +152,10 @@
   {
     "query": "juneau",
     "name": "Juneau, AK (JNU)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/jnu_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "JNU",
     "event": [
       {
         "date": "2020-10-01",
@@ -192,7 +204,10 @@
   {
     "query": "seattle",
     "name": "Seattle, WA (SEA)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/189052-ksea01_1_orig.jpg",
     "terms": "7",
+    "airport-type": "international",
+    "iaco": "SEA",
     "event": [
       {
         "date": "2020-10-01",
@@ -241,7 +256,10 @@
   {
     "query": "portland",
     "name": "Portland, OR (PDX)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/pdx_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "PDX",
     "event": [
       {
         "date": "2020-10-01",
@@ -290,7 +308,10 @@
   {
     "query": "san francisco",
     "name": "San Francisco, CA (SFO)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/flightbeam-studios-san-francisco-international-airport-hd-ksfo-sfo-2_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "SFO",
     "event": [
       {
         "date": "2020-10-01",
@@ -339,7 +360,10 @@
   {
     "query": "los angeles",
     "name": "Los Angeles, CA (LAX)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/sc1_1_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "LAX",
     "event": [
       {
         "date": "2020-10-01",
@@ -388,7 +412,10 @@
   {
     "query": "denver",
     "name": " Denver, CO (DEN)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/kden-screen8_2_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "DEN",
     "event": [
       {
         "date": "2020-10-01",
@@ -437,7 +464,10 @@
   {
     "query": "phoenix",
     "name": "Phoenix, AZ (PHX)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/edited/2usz9ld.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "PHX",
     "event": [
       {
         "date": "2020-10-01",
@@ -486,7 +516,10 @@
   {
     "query": "dallas",
     "name": "Dallas, TX (DFW)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/dfw_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "DFW",
     "event": [
       {
         "date": "2020-10-01",
@@ -535,7 +568,10 @@
   {
     "query": "houston",
     "name": "Houston, TX (IAH)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/terminal-e_orig.jpg",
+    "airport-type": "intercontinental",
     "terms": "7",
+    "iaco": "IAH",
     "event": [
       {
         "date": "2020-10-01",
@@ -584,7 +620,10 @@
   {
     "query": "kansas city",
     "name": "Kansas City, MO (MCI)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/205095-kmci2018-p3d-2_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "MCI",
     "event": [
       {
         "date": "2020-10-10",
@@ -633,7 +672,10 @@
   {
     "query": "grand forks",
     "name": "Grand Forks, ND (GFK)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/edited/2017-12-19-14-40-40-661.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "GFK",
     "event": [
       {
         "date": "2020-10-01",
@@ -682,7 +724,10 @@
   {
     "query": "boise",
     "name": "Boise, ID (BOI)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/2018-6-24-17-7-8-536_orig.jpg",
     "terms": "7",
+    "airport-type": "international",
+    "iaco": "BOI",
     "event": [
       {
         "date": "2020-10-01",
@@ -731,7 +776,10 @@
   {
     "query": "chicago",
     "name": "Chicago, IL (ORD)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/intro-1567189774_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "ORD",
     "event": [
       {
         "date": "2020-10-01",
@@ -780,7 +828,10 @@
   {
     "query": "nashville",
     "name": "Nashville, TN (BNA)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/bna_1.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "BNA",
     "event": [
       {
         "date": "2020-10-01",
@@ -829,7 +880,10 @@
   {
     "query": "atlanta",
     "name": "Atlanta, GA (ATL)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/katl-atlanta-06_1_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "ATL",
     "event": [
       {
         "date": "2020-10-01",
@@ -878,7 +932,10 @@
   {
     "query": "orlando",
     "name": "Orlando, FL (MCO)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/green-spaces-near-terminal_1_orig.jpg",
     "terms": "7",
+    "airport-type": "international",
+    "iaco": "MCO",
     "event": [
       {
         "date": "2020-10-10",
@@ -927,7 +984,10 @@
   {
     "query": "miami",
     "name": "Miami, FL (MIA)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/mia_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "MIA",
     "event": [
       {
         "date": "2020-10-01",
@@ -976,7 +1036,10 @@
   {
     "query": "arlington",
     "name": "Arlington, VA (DCA)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/kdca10_1_orig.jpg",
+    "airport-type": "national",
     "terms": "7",
+    "iaco": "DCA",
     "event": [
       {
         "date": "2020-10-01",
@@ -1025,7 +1088,10 @@
   {
     "query": "philadelphia",
     "name": "Philadelphia, PA (PHL)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/untitled-google-chrome-3-29-2019-4-45-58-pm_1_orig.png",
     "terms": "7",
+    "airport-type": "international",
+    "iaco": "PHL",
     "event": [
       {
         "date": "2020-10-01",
@@ -1074,7 +1140,10 @@
   {
     "query": "queens",
     "name": "Queens, NY (LGA)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/nya-16_1_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "LGA",
     "event": [
       {
         "date": "2020-10-01",
@@ -1123,7 +1192,10 @@
   {
     "query": "portland",
     "name": "Portland, ME (PWM)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/pwm_orig.jpg",
+    "airport-type": "international",
     "terms": "7",
+    "iaco": "PWM",
     "event": [
       {
         "date": "2020-10-01",
@@ -1172,7 +1244,10 @@
   {
     "query": "belgrade",
     "name": "Belgrade, MT (BZN)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/new-tab-google-chrome-10-26-2019-8-40-21-am_orig.png",
     "terms": 1,
+    "airport-type": "international",
+    "iaco": "BZN",
     "event": [
       {
         "date": "2020-10-01",
@@ -1185,7 +1260,10 @@
   {
     "query": "yellowstone",
     "name": "West Yellowstone, MT (WYS)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/new-tab-google-chrome-10-26-2019-8-19-48-am_orig.png",
+    "airport-type": "regional",
     "terms": 1,
+    "iaco": "WYS",
     "event": [
       {
         "date": "2020-10-01",
@@ -1198,6 +1276,9 @@
   {
     "query": "des moines",
     "name": "Des Moines, IA (DSM)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/edited/2017-2-5-13-59-36-40.jpg",
+    "airport-type": "international",
+    "iaco": "DSM",
     "terms": 7,
     "event": [
       {
@@ -1247,7 +1328,10 @@
   {
     "query": "new mexico",
     "name": "Albuquerque, NM (ABQ)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/edited/kabq-albuquerque-2.jpg",
+    "airport-type": "international",
     "terms": 7,
+    "iaco": "ABQ",
     "event": [
       {
         "date": "2020-10-01",
@@ -1296,7 +1380,10 @@
   {
     "query": "jackson",
     "name": "Jackson, MS (JAN)",
+    "image": "https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/edited/kjan.jpg",
+    "airport-type": "international",
     "terms": 1,
+    "iaco": "JAN",
     "event": [
       {
         "date": "2020-10-01",
@@ -1339,25 +1426,6 @@
         "time": "11:45",
         "type": "ROUND TRIP",
         "icao": "JAN"
-      }
-    ]
-  },
-  {
-    "query": "working",
-    "name": "working",
-    "terms": 1,
-    "event": [
-      {
-        "date": "2020-11-10",
-        "time": "17:15",
-        "type": "ONE WAY",
-        "icao": "WORK"
-      },
-      {
-        "date": "2020-11-13",
-        "time": "17:15",
-        "type": "ONE WAY",
-        "icao": "WORK"
       }
     ]
   }

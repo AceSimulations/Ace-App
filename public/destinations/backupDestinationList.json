@@ -1,0 +1,322 @@
+[
+  {
+    "icao": "HSV",
+    "state": "Alabama",
+    "image": "https://www.crunkletonassociates.com/wp-content/uploads/2020/01/huntsville-market-skyline.jpg",
+    "state-code": "AL",
+    "city": "Huntsville",
+    "airport": "Carl T. Jones",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "ATL",
+    "state": "Georgia",
+    "image": "https://www.traveller.com.au/content/dam/images/h/0/y/m/2/3/image.related.articleLeadwide.620x349.h0ym1r.png/1523412788839.jpg",
+    "state-code": "GA",
+    "city": "Atlanta",
+    "airport": "Hartsfield Jackson",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "SEA",
+    "state": "Washington",
+    "image": "https://www.airlines.org/wp-content/uploads/2014/11/Aerial_KSEA_May_2012.jpg",
+    "state-code": "WA",
+    "city": "Seattle",
+    "airport": "Seattle-Tacoma",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "MCO",
+    "state": "Florida",
+    "image": "https://airportix.com/wp-content/uploads/2018/03/orlando-airport-1.jpg",
+    "state-code": "FL",
+    "city": "Orlando",
+    "airport": "Orlando",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "PHL",
+    "state": "Philadelphia",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Philadelphia_International_Airport.jpg",
+    "state-code": "PA",
+    "city": "Philadelphia",
+    "airport": "Philadelphia",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "LAX",
+    "state": "California",
+    "image": "https://www.discoverlosangeles.com/sites/default/files/styles/hero/public/media/transportation/airport_transportationshuttle_services/lax_automatic_people_mover_aerial_view.jpg?itok=50hieBIE",
+    "state-code": "CA",
+    "city": "Los Angeles",
+    "airport": "Los Angeles",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "DCA",
+    "state": "Washington D.C.",
+    "image": "https://www.flyreagan.com/sites/default/files/rx-02_aerial_ga.jpg",
+    "state-code": "DC",
+    "city": "Washington D.C.",
+    "airport": "Ronald Reagan Washington",
+    "airport-type": "national",
+    "departures": []
+  },
+  {
+    "icao": "DEN",
+    "state": "Colorado",
+    "image": "https://3nwec1qd4zy21zftr339bla3-wpengine.netdna-ssl.com/wp-content/uploads/2018/04/DEN_WebImages4_website-1800x1136.jpg",
+    "state-code": "CO",
+    "city": "Denver",
+    "airport": "Denver",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "LGA",
+    "state": "New York",
+    "image": "https://newyorkyimby.com/wp-content/uploads/2018/07/LaGuardia-Airport-Redevelopment-rendering-by.png",
+    "state-code": "NY",
+    "city": "New York",
+    "airport": "LaGuardia",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "HNL",
+    "state": "Hawaii",
+    "image": "https://i.pinimg.com/originals/05/e7/e3/05e7e38c8fba3e19a3167d460cdf5a9f.jpg",
+    "state-code": "HI",
+    "city": "Honolulu",
+    "airport": "Daniel K. Inouye",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "PAE",
+    "state": "Washington",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Aerial_Paine_Field_August_2009.jpg",
+    "state-code": "WA",
+    "city": "Everett",
+    "airport": "Snohomish County",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "ORD",
+    "state": "Illinois",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/dc/O%27Hare_from_ISS_12-06-2019.jpg",
+    "state-code": "IL",
+    "city": "Chicago",
+    "airport": "Chicago O'Hare",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "SFO",
+    "state": "California",
+    "image": "https://www.traveller.com.au/content/dam/images/h/0/y/m/2/3/image.related.articleLeadwide.620x349.h0ym1r.png/1523412788839.jpg",
+    "state-code": "CA",
+    "city": "San Francisco",
+    "airport": "San Francisco",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "PHX",
+    "state": "Arizona",
+    "image": "https://lh3.googleusercontent.com/proxy/Rj1vp9XM5ZG-lfsNH_6ltJICh87wn0BqATAiqeaxelXmO1WP7BRmxxMrupuPH6AO9cFQgKn2-t3Z5AAu-vJMJYFSImTXHGt945_ouS6FooWdi79HIug",
+    "state-code": "AZ",
+    "city": "Phoenix",
+    "airport": "Phoenix Sky Harbor",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "BZN",
+    "state": "Montana",
+    "image": "https://nbaa.org/wp-content/uploads/2018/04/BZN-1097x731.jpg",
+    "state-code": "MT",
+    "city": "Bozeman",
+    "airport": "Bozeman Yellowstone",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "GFK",
+    "state": "North Dacota",
+    "image": "https://flyinvacations.com/wp-content/uploads/2015/01/grand-forks.jpg",
+    "state-code": "ND",
+    "city": "Grand Forks",
+    "airport": "Mark Andrews",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "PWM",
+    "state": "Maine",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/KPWM_Aerial_Wiki.jpg",
+    "state-code": "ME",
+    "city": "Portland",
+    "airport": "Portland Jetport",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "IAH",
+    "state": "Texas",
+    "image": "https://i.pinimg.com/originals/19/f6/90/19f6903b95bb8aec3c2ecaff065aabc3.jpg",
+    "state-code": "TX",
+    "city": "Houston",
+    "airport": "George Bush",
+    "airport-type": "intercontinental",
+    "departures": []
+  },
+  {
+    "icao": "BNA",
+    "state": "Tennessee",
+    "image": "https://ewscripps.brightspotcdn.com/64/2d/bfd0ef484f1f9b1ffd52ae0e59de/bna-concourse-d-aerial-3.jpg",
+    "state-code": "TN",
+    "city": "Nashville",
+    "airport": "Nashville",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "MIA",
+    "state": "Florida",
+    "image": "https://airport-world.com/wp-content/uploads/2020/04/viewofmiacargo1-copy2017miami-dadeaviationdept-scaled.jpg",
+    "state-code": "FL",
+    "city": "Miami",
+    "airport": "Miami",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "PDX",
+    "state": "Oregan",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Portlandinternationalairportfromtheair.jpg",
+    "state-code": "OR",
+    "city": "Portland",
+    "airport": "Portland",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "DFW",
+    "state": "Texas",
+    "image": "https://i.pinimg.com/originals/0f/50/bb/0f50bb5f53b97301498340d1cb0ae47e.jpg",
+    "state-code": "TX",
+    "city": "Dallas",
+    "airport": "Dallas-Fort Worth",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "JNU",
+    "state": "Alaska",
+    "image": "https://i.pinimg.com/originals/77/59/60/77596016d6fabd487c2f6248c80efa3d.jpg",
+    "state-code": "AK",
+    "city": "Juneau",
+    "airport": "Juneau",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "ANC",
+    "state": "Alaska",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Anchorage_International_Airport_and_Cook_Inlet.jpg",
+    "state-code": "AK",
+    "city": "Anchorage",
+    "airport": "Ted Stevens Anchorage",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "MCI",
+    "state": "Missouri",
+    "image": "https://d279m997dpfwgl.cloudfront.net/wp/2017/10/1026_kc-airport-aerial.jpg",
+    "state-code": "MO",
+    "city": "Kansas City",
+    "airport": "Kansas City",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "BOI",
+    "state": "Idaho",
+    "image": "https://lh3.googleusercontent.com/proxy/T1LXFgz1COhfn3DxDu0bXBgphcw4wxIlXf3a359QYh6LMqvD1_mChOqFmGRee-VZkwqg932vJF6nietPa8g",
+    "state-code": "ID",
+    "city": "Boise",
+    "airport": "Boise Air Terminal/Gowen",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "DSM",
+    "state": "Iowa",
+    "image": "https://dsm-airport.com/images/image3.jpg",
+    "state-code": "IA",
+    "city": "Des Moines",
+    "airport": "Des Moines",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "JAN",
+    "state": "Mississippi",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Jackson-Evers_International_Airport_in_July_2005.jpg/220px-Jackson-Evers_International_Airport_in_July_2005.jpg",
+    "state-code": "MS",
+    "city": "Jackson",
+    "airport": "Jackson-Medgar Wiley Evers",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "SLC",
+    "state": "Utah",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/SLC_airport%2C_2010.jpg",
+    "state-code": "UT",
+    "city": "Salt Lak City",
+    "airport": "Salt Lake City",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "ABQ",
+    "state": "New Mexico",
+    "image": "https://s3-media4.fl.yelpcdn.com/bphoto/f6wZzkMGf3YbwdK-9BvR5w/ls.jpg",
+    "state-code": "NM",
+    "city": "Albuquerque",
+    "airport": "Albuquerque",
+    "airport-type": "international",
+    "departures": []
+  },
+  {
+    "icao": "OME",
+    "state": "Alaska",
+    "image": "https://khms1.googleapis.com/kh?v=878&hl=en&x=1325&y=8631&z=15",
+    "state-code": "AK",
+    "city": "Nome",
+    "airport": "Nome",
+    "airport-type": "Regional",
+    "departures": []
+  },
+  {
+    "icao": "DAY",
+    "state": "Ohio",
+    "image": "https://www.flydayton.com/wp-content/uploads/2015/07/peidmont-hub.jpg",
+    "state-code": "OH",
+    "city": "Dayton",
+    "airport": "James M Cox Dayton",
+    "airport-type": "international",
+    "departures": []
+  }
+]
