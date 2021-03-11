@@ -1,5 +1,10 @@
 # Version Control
 
+##### **Version 1.11.3**
+> **Latest Stable Version as of 12-1-20**
+> New UI Flight Status Completed
+> Fixed a few Bugs
+
 ##### **Version 1.10.3**
 > **Latest Stable Version as of 12-1-20**
 > Update System is fully working

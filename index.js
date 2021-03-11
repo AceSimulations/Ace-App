@@ -263,6 +263,45 @@ app.get('/flightStatus', (req, res) => {
   })
 })
 
+app.get('/boardingpass', (req, res) => {
+  res.render('boardingpass.hbs')
+})
+
+/*app.get('/boardingpass', (req, res) => {
+  console.log('\n\nBoardingPass\n\n')
+  console.log(req.query.name)
+  var months = ["", "January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  var name = req.query.name
+  var capsName = name.toUpperCase()
+  var orginDate = req.query.date
+  var dateVanilla = orginDate.slice(0, 10)
+  var year = dateVanilla.slice(0, 4)
+  var monthVanilla = Number(dateVanilla.slice(5, 7))
+  var month = months[monthVanilla]
+  var day = dateVanilla.slice(8, 10)
+  var date = month + " " + day + ", " + year
+  var type = req.query.type
+  var flightshort = ""
+  var data = JSON.parse(fs.readFileSync('public/userinfo/users/' + req.query.username + '/' + req.query.username + ".json"))
+  console.log(data)
+  data.forEach((index) => {
+    console.log(index.flightName, req.query.name)
+    if (index.flightName == req.query.name) {
+      console.log(index.flightName)
+      console.log(index.flightShort + ": DATA")
+      flightshort = index.flightShort
+      console.log(flightshort)
+      var arrShort = flightshort.slice(4, 7)
+      res.render('boardingpass.hbs', {
+        name,
+        date,
+        type,
+        arrival: arrShort
+      })
+    }
+  })
+})*/
+
 // Do not mess with the '/connect' endpoint. This data connects directly to the internal filesystem. Misusing the enpoint could resolve in destructive data for other applications. Thank you!!! :)
 
 // As of 11/11/2020 12:01 PM
