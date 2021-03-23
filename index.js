@@ -166,6 +166,9 @@ app.get('/home', (req, res) => {
 app.get('/news', (req, res) => {
   res.render('ace-news.hbs')
 })
+app.get('/news-archive', (req, res) => {
+  res.render('newsarchive.hbs')
+})
 
 app.get('/delete-flights', (req, res) => {
   var data = JSON.parse(fs.readFileSync("public/userinfo/users/" + req.query.username + "/" + req.query.username + ".json"))
@@ -267,7 +270,7 @@ app.get('/boardingpass', (req, res) => {
   res.render('boardingpass.hbs')
 })
 
-/*app.get('/boardingpass', (req, res) => {
+app.get('/boardingpass', (req, res) => {
   console.log('\n\nBoardingPass\n\n')
   console.log(req.query.name)
   var months = ["", "January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -300,7 +303,7 @@ app.get('/boardingpass', (req, res) => {
       })
     }
   })
-})*/
+})
 
 // Do not mess with the '/connect' endpoint. This data connects directly to the internal filesystem. Misusing the enpoint could resolve in destructive data for other applications. Thank you!!! :)
 
@@ -577,10 +580,6 @@ app.get('/help', (req, res) => {
 
 app.get('/resource', (req, res) => {
   res.render('resource.hbs')
-})
-
-app.get('/radar', (req, res) => {
-  res.render('flightRadar.hbs')
 })
 
 app.get('/confirm-book', (req, res) => {

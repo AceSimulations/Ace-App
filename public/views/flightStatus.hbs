@@ -52,12 +52,12 @@
     <div style="margin: 0px; margin-top: 10px; background-image: url(flightbackground.png); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); background-position: right; background-size: cover; background-repeat: no-repeat; padding: 0px; height: 80%; width: 95%; border: none; border-radius: 10px;">
       <div style="margin: 0px; padding: 0px; float: left; border: none; border-radius: 10px 0px 0px 0px; background-color: white; width: 50%; height: calc(20% - 30px); font-family: Offside; font-size: 40px;padding-top: 30px;">HSV<p style="font-size: 12px; margin: 0px;">Huntsville, AL (HSV)</p></div>
       <img>
-      <div style="margin: 0px; padding: 0px; float: right; border: none; border-radius: 0px 10px 0px 0px; background-color: #d1d1d1; width: 50%; height: calc(20% - 30px); font-family: Offside; font-size: 40px; padding-top: 30px;">{{arrival}}<p style="font-size: 12px; margin: 0px;">{{name}}</p></div>
+      <div id="arrivalind" style="margin: 0px; padding: 0px; float: right; border: none; border-radius: 0px 10px 0px 0px; background-color: #d1d1d1; width: 50%; height: calc(20% - 30px); font-family: Offside; font-size: 40px; padding-top: 30px;">{{arrival}}<p style="font-size: 12px; margin: 0px;">{{name}}</p></div>
 
       <div style="text-align: left; margin: 0px; padding: 0px; float: left; border: none; border-radius: 0px 0px 10px 0px; background-color: #d1d1d1; width: 50%; height: 60%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-        <p style="font-family: Comfortaa; font-size: 20px; padding-left: 10px; margin: 0px; margin-top: 15px;">{{date}}</p>
+        <p id="dateind" style="font-family: Comfortaa; font-size: 20px; padding-left: 10px; margin: 0px; margin-top: 15px;">{{date}}</p>
         <p style="font-family: Comfortaa; font-size: 12px; padding-left: 10px; margin: 0px;">DEPARTURE</p>
-        <p style="font-family: Comfortaa; font-size: 20px; padding-left: 10px; margin: 0px; margin-top: 15px;">{{type}}</p>
+        <p id="typeind" style="font-family: Comfortaa; font-size: 20px; padding-left: 10px; margin: 0px; margin-top: 15px;">{{type}}</p>
         <p style="font-family: Comfortaa; font-size: 12px; padding-left: 10px; margin: 0px;">TRIP TYPE</p>
 
         <p style="font-family: Comfortaa; font-size: 15px; padding-left: 10px; margin: 0px; margin-top: 30px;">GATE</p>
@@ -72,7 +72,7 @@
       </div>
 
       <div style="float: left; position: absolute;bottom: 50px; height: 10%; width: 95%;">
-        <button style="outline: none; margin: 0px; padding: 0px; float: left; border: none; border-radius: 0px 0px 0px 10px; background-color: #d1d1d1; width: 50%; height: 100%; color: #e60f0f; font-family: Montserrat; font-size: 16px;">Boarding Pass</button>
+        <button onclick="boardingpassData()" style="outline: none; margin: 0px; padding: 0px; float: left; border: none; border-radius: 0px 0px 0px 10px; background-color: #d1d1d1; width: 50%; height: 100%; color: #e60f0f; font-family: Montserrat; font-size: 16px;">Boarding Pass</button>
         <div style="position: absolute; left: calc(50% - 2px); margin-top: 1.75%; height: 70%; width: 4px; background-color: #e60f0f;"></div>
         <button style="outline: none; margin: 0px; padding: 0px; float: right; border: none; border-radius: 0px 0px 10px 0px; background-color: #d1d1d1; width: 50%; height: 100%; color: #e60f0f; font-family: Montserrat; font-size: 16px;">Track Flight</button>
       </div>
@@ -110,6 +110,15 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="script.js"></script>
   <script>
+
+    // Define varibales
+    date = document.getElementById('dateind').textContent
+    type = document.getElementById('typeind').textContent
+
+    function boardingpassData() {
+      window.location = '/boardingpass?name=' + localStorage.getItem('username') + '&date=' + date + '&type=' + type + '&username=' + localStorage.getItem('username');
+    }
+
     var time = 0;
     const animateNav = () => {
       time++

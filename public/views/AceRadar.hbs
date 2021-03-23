@@ -43,23 +43,23 @@
   </style>
   <body style="margin: 0px;">
     <center>
-    <div style="width: 100%; height: 55px; background-color: #e60f0f;">
-      <div style="width: 90%; height: 55px; position: relative;">
-        <img src="hamburger.png" style="width: 40px; position: absolute; left: 0px; top: 10px;" onclick="animateNav('true')">
-        <img src="profile.png" onclick="profile()" style="width: 30px; position: absolute; right: 3px; top: 13px;">
-        <p style="font-family: Montserrat; color: white; font-weight: 700; letter-spacing: 3px; padding-top: 20px;">Flight Radar</p>
+          <div style="width: 100%; height: 55px; background-color: #e60f0f;">
+      <div style="width: 100%; height: 55px; position: fixed; background-color: #e60f0f;">
+        <img src="hamburger.png" style="margin-left: 5%;width: 40px; position: absolute; left: 0px; top: 10px;" onclick="animateNav('true')">
+        <img src="profile.png" onclick="profile()" style="width: 30px; margin-right: 5%; position: absolute; right: 3px; top: 13px;">
+        <p style="font-family: Montserrat; color: white; font-weight: 700; letter-spacing: 3px; padding-top: 20px; margin-top: 3px;">Flight Radar</p>
       </div>
     </div>
-    <div style="text-align: left; width: 100%; height: auto;">
-      <img src="acelogo.png" style="display: inline-block; width: 20vw; position: relative; top: 10px; left: 10px; right: 10px;">
-      <div style="margin-left: 20px; display: inline-block;">
-      <i style="font-weight: 600; display: inline-block; font-size: 20px; font-family: Montserrat; color: #e60f0f;">Live Flight Radar</i>
-      <i style="display: block; font-size: 10px; font-family: Montserrat; color: #c4c4c4;">Provided by Flight Aware</i>
+      <div style="position: absolute; top: 55px; background-color: grey; width: 100%; height: calc(100% - 55px);">
+        <img src="mapbackground.png" style="background-position: center; height: 100%;">
+
+        <!--data-->
+        <div style="display: none; color: #e60f0f; font-family: Montserrat; position: absolute; top: 100px; left: 550px;" id="HSV">
+        <img src="redLocation.png" style="width: 15px;">HSV</div>
+        <div style="display: none; color: #e60f0f; font-family: Montserrat; position: absolute; top: 150px; left: 500px;" id="ATL">
+        <img src="redLocation.png" style="width: 15px;">ATL</div>
+        <!--end data-->
       </div>
-      <p style="margin: 0px; margin-top: 20px; margin-left: 10px; display: block; font-size: 12px; font-family: Montserrat; color: orange; padding: 0px; ">Server Status: Down</p>
-      <div style="padding: 0px; margin-left: 10px;"><iframe src="https://ace-radar.benjaminlamber1.repl.co/" width="100%" height="75%" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-      </div>
-    <div>
       
      </div>
     </center>
@@ -110,5 +110,17 @@
   function profile() {
     document.getElementById("profileDiv").style.display = "block"
   }
+  //data
+  var airport1 = 'HSV';
+  var airport2 = 'ATL';
+
+  function airportInit() {
+  document.getElementById(airport1).style.display = "block";
+  console.log(airport1);
+  document.getElementById(airport2).style.display = "block";
+  console.log(airport2);
+  }
+
+  airportInit();
 </script>
 </html>

@@ -1,8 +1,10 @@
 # Version Control
 
 ##### **Version 1.11.3**
-> **Latest Stable Version as of 12-1-20**
+> **Latest Stable Version as of 3-23-20**
 > New UI Flight Status Completed
+> New UI Boarding Pass Completed
+> New UI Ace News Completed
 > Fixed a few Bugs
 
 ##### **Version 1.10.3**
