@@ -51,16 +51,7 @@
       </div>
     </div>
       <div style="position: absolute; top: 55px; background-color: grey; width: 100%; height: calc(100% - 55px);">
-        <img src="mapbackground.png" style="background-position: center; height: 100%;">
-
-        <!--data-->
-        <div style="display: none; color: #e60f0f; font-family: Montserrat; position: absolute; top: 100px; left: 550px;" id="HSV">
-        <img src="redLocation.png" style="width: 15px;">HSV</div>
-        <div style="display: none; color: #e60f0f; font-family: Montserrat; position: absolute; top: 150px; left: 500px;" id="ATL">
-        <img src="redLocation.png" style="width: 15px;">ATL</div>
-        <!--end data-->
-      </div>
-      
+<iframe id="radarData" src='https://mapapi.diagonalstudios.repl.co/route?dep=huntsville%20international%20airport&arr=lax' style="width: 100%; height: 100%; border: none; background-color: #d1d1d1;"></iframe>
      </div>
     </center>
       <!--navigation-->
@@ -76,7 +67,7 @@
           <button style="text-align: left; color: #e60f0f; width: 150px; height: 30px; background-color: transparent; border: none; margin: 0px; margin-top: 10px; margin-left: 20px; border-radius: 4px; font-family: Montserrat;" onclick="window.location='/resource'">RESOURCE</button>
           <button style="text-align: left; color: #e60f0f; width: 150px; height: 30px; background-color: transparent; border: none; margin: 0px; margin-top: 10px; margin-left: 20px; border-radius: 4px; font-family: Montserrat;" onclick="window.location='/help'">HELP</button><!--
           --><button style="position: absolute; margin-left: 18px; bottom: 40px; text-align: left; left: 0px; color: #e60f0f; width: 150px; height: 30px; background-color: transparent; border: none; border-radius: 4px; font-family: Montserrat;" onclick="window.location='/'">Log Out</button>
-          <i style="position: absolute; color: #e60f0f; bottom: 20px; left: 20px; font-family: Montserrat; font-size: 12px;">Copyright Ace Airlines™ 2020</i>
+          <i style="position: absolute; color: #e60f0f; bottom: 20px; left: 20px; font-family: Montserrat; font-size: 12px;">Copyright Ace Airlines™ 2021</i>
       </div>
     </div>
     <!--Profile-->
@@ -94,6 +85,17 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="script.js"></script>
 <script>
+
+var urlData = window.location.href;
+var res = urlData.slice(59);
+
+  function dataSetUp() {
+    console.log('Splitting Data');
+    console.log(urlData);
+    document.getElementById('radarData').src = res;
+  }
+  dataSetUp();
+
   var type = "false"
   var time = 0;
   const animateNav = () => {
@@ -110,17 +112,5 @@
   function profile() {
     document.getElementById("profileDiv").style.display = "block"
   }
-  //data
-  var airport1 = 'HSV';
-  var airport2 = 'ATL';
-
-  function airportInit() {
-  document.getElementById(airport1).style.display = "block";
-  console.log(airport1);
-  document.getElementById(airport2).style.display = "block";
-  console.log(airport2);
-  }
-
-  airportInit();
 </script>
 </html>

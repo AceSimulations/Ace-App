@@ -6,6 +6,7 @@ const io = require('socket.io')(http);
 const hbs = require('hbs');
 const fs = require('fs');
 const nodemailer = require('nodemailer')
+const axios = require('axios')
 const path = require('path');
 const chalk = require('chalk')
 const Database = require('@replit/database')
@@ -13,6 +14,7 @@ const db = new Database()
 const Cryptr = require('cryptr')
 const cryptr = new Cryptr('cIeJJQpIpHo95UL9SZyq')
 const bodyParser = require('body-parser')
+const ejs = require('ejs')
 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
@@ -266,6 +268,41 @@ app.get('/flightStatus', (req, res) => {
   })
 })
 
+app.get('/flight-radar', (req, res) => {
+  console.log('\n\nFlight Radar\n\n')
+  console.log(req.query.name)
+  var months = ["", "January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  var name = req.query.name
+  var capsName = name.toUpperCase()
+  var orginDate = req.query.date
+  var dateVanilla = orginDate.slice(0, 10)
+  var year = dateVanilla.slice(0, 4)
+  var monthVanilla = Number(dateVanilla.slice(5, 7))
+  var month = months[monthVanilla]
+  var day = dateVanilla.slice(8, 10)
+  var date = month + " " + day + ", " + year
+  var type = req.query.type
+  var flightshort = ""
+  var data = JSON.parse(fs.readFileSync('public/userinfo/users/' + req.query.username + '/' + req.query.username + ".json"))
+  console.log(data)
+  data.forEach((index) => {
+    console.log(index.flightName, req.query.name)
+    if (index.flightName == req.query.name) {
+      console.log(index.flightName)
+      console.log(index.flightShort + ": DATA")
+      flightshort = index.flightShort
+      console.log(flightshort)
+      var arrShort = flightshort.slice(4, 7)
+      res.render('AceRadar.hbs', {
+        name,
+        date,
+        type,
+        arrival: arrShort
+      })
+    }
+  })
+})
+
 app.get('/boardingpass', (req, res) => {
   res.render('boardingpass.hbs')
 })
@@ -305,45 +342,67 @@ app.get('/boardingpass', (req, res) => {
   })
 })
 
-// Do not mess with the '/connect' endpoint. This data connects directly to the internal filesystem. Misusing the enpoint could resolve in destructive data for other applications. Thank you!!! :)
+// Do not mess with the '/connect' endpoint. This data connects directly to the internal filesystem. Misusing the endpoint could resolve in destructive data for other applications. Thank you!!! :)
 
-// As of 11/11/2020 12:01 PM
+// As of 4/2/21 11:00 AM
 
-app.get('/authorize', async (req, res) => {
-  var key = await db.get('apikey').then(value => {
-    return value.key
-  })
-  if (key === req.query.key) {
-    var userdb = await JSON.parse(fs.readFileSync('public/userinfo/userInfo.json'))
-    var user = userdb.find((user) => {
-      return user.username === cryptr.decrypt(req.query.username)
-    })
-    if (user) {
-      console.log('user found')
-      request({url: 'https://api.hashify.net/hash/sha3-512/hex?value=' + cryptr.decrypt(req.query.password), json: true}, (err, response) => {
-        if (response.body.Digest === user.password) {
+// generateUniqueID
+
+/* Routes used by the BAF */
+
+function generateUniqueID(length) {
+    var chrArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    var returnValue = ""
+    for (var x = 0; x < Math.floor(length/2); x++) {
+        returnValue += `${chrArray[Math.round(Math.random() * 26)]}${Math.floor(Math.random() * 10)}`
+    }
+    return returnValue
+}
+
+app.post('/auth0', (req, res) => {
+  const { username, password } = JSON.parse(Buffer.from(usrPostData, 'base64').toString())
+  axios.get(`https://api.hashify.net/hash/sha3-512/hex?value=${password}`)
+    .then((response) => {
+      JSON.parse(fs.readFileSync(path.join(__dirname, 'public/userinfo/userInfo.json'))).forEach((user) => {
+        if (username === user.username && user.password === response.data.Digest) {
+          const uniqid = generateUniqueID(7)
+          db.set(`session-${uniqid}`, Date.now())
           res.send({
-            status: 200
-          })
-        } else {
-          res.send({
-            status: 401
+            auth: true,
+            token: uniqid,
+            username
           })
         }
       })
-    } else {
-      res.send({
-        error: 401,
-        status: 'No user found.'
-      })
-    }
-  } else {
-    res.send({
-      error: 401,
-      msg: 'No access.'
     })
-  }
 })
+
+app.post('/auth0/verify-token', (req, res) => {
+  db.get(`session-${JSON.parse(Buffer.from(req.body.token, 'base64').toString())}`)
+    .then((response) => {
+      console.log(response)
+      res.send({ response })
+    })
+})
+
+app.post('/returnFlights', (req, res) => {
+  
+})
+
+app.post('/savebook', (req, res) => {
+  var thread = req.body.data.digest
+  var userFile = JSON.parse(fs.readFileSync(path.join(__dirname, `public/userinfo/users/${req.body.data.username}/${req.body.data.username}.json`)))
+  userFile.push(thread)
+  fs.writeFileSync(path.join(__dirname, `public/userinfo/users/${req.body.data.username}/${req.body.data.username}.json`), JSON.stringify(userFile))
+  res.send({ post: 'successful', user: req.body.data.username })
+})
+
+app.post('/destinations', (req, res) => {
+  console.log(`[${Date.now()}] An authorized Ace Airlines application requested access to routes.`)
+  res.send(fs.readFileSync(path.join(__dirname, 'public/destinations/destinations.json')))
+})
+
+/*  */
 
 app.post('/saveto', (req, res) => {
   var data = req.body.destinations
