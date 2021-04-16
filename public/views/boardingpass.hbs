@@ -73,11 +73,11 @@
     <center>
         <div id="Acecontent" style="z-index: 1000; display: flex; text-align: left; position: absolute; left: 42px; top: 75px; background-color: transparent;">
         <div style="margin-left: 122px; margin-top: 15px;">
-        <p style="font-family: montserrat; display: inline-block; font-size: 14px; color: #e60f0f;">HSV &nbsp&nbsp ATL</p>
-        <p style="font-family: montserrat; margin-left: 83px; font-size: 11px; display: inline-block; color: black;">Ben Lambertson</p>
+        <p style="font-family: montserrat; display: inline-block; font-size: 14px; color: #e60f0f;">HSV &nbsp&nbsp {{arrival}}</p>
+        <p style="font-family: montserrat; margin-left: 83px; font-size: 11px; display: inline-block; color: black;">{{username}}</p>
         <div style="margin-left: -103px;">
-        <p style="font-family: montserrat; font-size: 12px; display: inline-block; color: black;">Ben Lambertson</p>
-        <p style="font-family: montserrat; font-size: 12px; display: inline-block; position: absolute; left: 133px; color: black;">January 5, 2021</p>
+        <p style="font-family: montserrat; font-size: 12px; display: inline-block; color: black;">{{username}}</p>
+        <p style="font-family: montserrat; font-size: 12px; display: inline-block; position: absolute; left: 133px; color: black;">{{date}}</p>
         </div>
         <div style="margin-left: 10px; margin-top: -5px;">
         <p style="font-family: montserrat; font-size: 15px; display: inline-block; color: black;">Huntsville</p>
@@ -87,9 +87,9 @@
         <p style="font-family: montserrat; font-size: 18px; margin-left: 140px; margin-top: 15px; display: inline-block; color: black;">HSV</p>
         </div>
         <div style="position: absolute; left: 405px; top: 60px; width: 100px;">
-          <p style="font-family: montserrat; font-size: 11px; display: inline-block; color: black;">Ben Lambertson</p>
+          <p style="font-family: montserrat; font-size: 11px; display: inline-block; color: black;">{{username}}</p>
           <p style="font-family: montserrat; font-size: 11px; margin-top: 10px; color: black;">HSV</p>
-          <p style="font-family: montserrat; font-size: 11px; margin-top: 18px; color: black;">ATL</p>
+          <p style="font-family: montserrat; font-size: 11px; margin-top: 18px; color: black;">{{arrival}}</p>
         </div>
         </div>
     </div>
@@ -102,7 +102,7 @@
           
     <center style="margin-top: 20px">
       <b style="color: #e60f0f; font-size: 25px; font-family: montserrat;" >Flight Information</b>
-      <i style="display: block; color: #adadad; font-size: 50px; font-family: montserrat;" >HSV-ATL</i>
+      <i style="display: block; color: #adadad; font-size: 50px; font-family: montserrat;" >HSV-{{arrival}}</i>
 
 <div style="margin-top: 30px; ">
       <div style="width: 49.5%; display: table-cell;">
@@ -122,7 +122,15 @@
       <button id="print" onclick="printer()" style="font-family: montserrat; font-size: 14px; border: none; border-radius: 5px; color: white;">Print Boarding Pass</button>
     </center>
       </div>
+
+    <!--bar-->
+    <div style="background-color: white; padding-top: 5px; padding-bottom: 5px; width: 100%; position: fixed; bottom: 0px;">
+    <img src="house.png" onclick="window.location='/home'" style="margin-left: 20%; float: left; display: inline-block; width: 35px;">
+    <div onclick="window.location='/book-a-flight'" style="box-shadow: 0 0 10px rgba(230, 15, 15, 0.6); display: inline-block; width: 40px; height: 40px; border-radius: 5px; color: white; font-size: 35px; font-family: Montserrat; background-color: #e60f0f;">+</div>
+    <img src="greyairplane.png" onclick="window.location='/my-flights'" style="margin-right: 20%; float: right; display: inline-block; width: 35px;">
+</div>
     </center>
+
       <!--navigation-->
       <div id="unanimate-nav-def" style="width: 250px; background-color: #d6d6d6; height: 100vh; position: absolute; top: 0px; left: 0px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); margin-left: -260px  ;">
           <img src="backArrowNav.png" style="position: absolute; top: 30px; right: 30px; width: 10px;" onclick="unanimateNav()">

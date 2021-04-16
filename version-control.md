@@ -1,5 +1,12 @@
 # Version Control
 
+##### **Version 1.12.1**
+> **Latest Stable Version as of 4-16-21**
+> Home UI completed
+> Added quick link buttons on every page
+> Integrated with Book A Flight
+> Fixed a few Bugs
+
 ##### **Version 1.11.5**
 > **Latest Stable Version as of 4-5-21**
 > New UI Resources completed

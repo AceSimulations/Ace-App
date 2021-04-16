@@ -259,6 +259,7 @@ app.get('/flightStatus', (req, res) => {
       console.log(flightshort)
       var arrShort = flightshort.slice(4, 7)
       res.render('flightStatus.hbs', {
+        username: req.query.username,
         name,
         date,
         type,
@@ -266,75 +267,28 @@ app.get('/flightStatus', (req, res) => {
       })
     }
   })
-})
-
-app.get('/flight-radar', (req, res) => {
-  console.log('\n\nFlight Radar\n\n')
-  console.log(req.query.name)
-  var months = ["", "January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-  var name = req.query.name
-  var capsName = name.toUpperCase()
-  var orginDate = req.query.date
-  var dateVanilla = orginDate.slice(0, 10)
-  var year = dateVanilla.slice(0, 4)
-  var monthVanilla = Number(dateVanilla.slice(5, 7))
-  var month = months[monthVanilla]
-  var day = dateVanilla.slice(8, 10)
-  var date = month + " " + day + ", " + year
-  var type = req.query.type
-  var flightshort = ""
-  var data = JSON.parse(fs.readFileSync('public/userinfo/users/' + req.query.username + '/' + req.query.username + ".json"))
-  console.log(data)
-  data.forEach((index) => {
-    console.log(index.flightName, req.query.name)
-    if (index.flightName == req.query.name) {
-      console.log(index.flightName)
-      console.log(index.flightShort + ": DATA")
-      flightshort = index.flightShort
-      console.log(flightshort)
-      var arrShort = flightshort.slice(4, 7)
-      res.render('AceRadar.hbs', {
-        name,
-        date,
-        type,
-        arrival: arrShort
-      })
-    }
-  })
-})
-
-app.get('/boardingpass', (req, res) => {
-  res.render('boardingpass.hbs')
 })
 
 app.get('/boardingpass', (req, res) => {
   console.log('\n\nBoardingPass\n\n')
-  console.log(req.query.name)
+  console.log(req.query)
+  var username = req.query.username
   var months = ["", "January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
   var name = req.query.name
   var capsName = name.toUpperCase()
-  var orginDate = req.query.date
-  var dateVanilla = orginDate.slice(0, 10)
-  var year = dateVanilla.slice(0, 4)
-  var monthVanilla = Number(dateVanilla.slice(5, 7))
-  var month = months[monthVanilla]
-  var day = dateVanilla.slice(8, 10)
-  var date = month + " " + day + ", " + year
   var type = req.query.type
   var flightshort = ""
   var data = JSON.parse(fs.readFileSync('public/userinfo/users/' + req.query.username + '/' + req.query.username + ".json"))
-  console.log(data)
+  var username = req.query.username
   data.forEach((index) => {
-    console.log(index.flightName, req.query.name)
-    if (index.flightName == req.query.name) {
-      console.log(index.flightName)
-      console.log(index.flightShort + ": DATA")
+    console.log(index.flightName, name)
+    if (index.flightName === name) {
       flightshort = index.flightShort
-      console.log(flightshort)
       var arrShort = flightshort.slice(4, 7)
       res.render('boardingpass.hbs', {
         name,
-        date,
+        username,
+        date: req.query.date,
         type,
         arrival: arrShort
       })
@@ -360,6 +314,8 @@ function generateUniqueID(length) {
 }
 
 app.post('/auth0', (req, res) => {
+  var usrPostData = req.body.usrInfo
+  console.log(usrPostData)
   const { username, password } = JSON.parse(Buffer.from(usrPostData, 'base64').toString())
   axios.get(`https://api.hashify.net/hash/sha3-512/hex?value=${password}`)
     .then((response) => {
@@ -385,11 +341,14 @@ app.post('/auth0/verify-token', (req, res) => {
     })
 })
 
-app.post('/returnFlights', (req, res) => {
-  
+app.post('/autosaveDestination', (req, res) => {
+  var saveData = req.body.data
+  fs.writeFileSync(path.join(__dirname, 'public/destinations/destinations.json'), JSON.stringify(saveData))
+  res.send({ res: true })
 })
 
 app.post('/savebook', (req, res) => {
+  console.log(req.body)
   var thread = req.body.data.digest
   var userFile = JSON.parse(fs.readFileSync(path.join(__dirname, `public/userinfo/users/${req.body.data.username}/${req.body.data.username}.json`)))
   userFile.push(thread)
@@ -401,8 +360,6 @@ app.post('/destinations', (req, res) => {
   console.log(`[${Date.now()}] An authorized Ace Airlines application requested access to routes.`)
   res.send(fs.readFileSync(path.join(__dirname, 'public/destinations/destinations.json')))
 })
-
-/*  */
 
 app.post('/saveto', (req, res) => {
   var data = req.body.destinations

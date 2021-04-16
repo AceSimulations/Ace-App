@@ -75,9 +75,9 @@
         <p style="font-family: Montserrat; color: white; font-weight: 700; letter-spacing: 3px; padding-top: 20px;">BOOK A FLIGHT</p>
       </div>
       <center>
-      <div style="width: 80%; height: 40px; position: absolute; bottom: 35px; left: 50%; margin-left: -40%; text-align: center;">
-        <input id="searchDest" type="text" style="border: 2px solid; border-radius: 15px; width: 100%; height: 40px; font-family: Montserrat; text-align: center;" placeholder="Search for a destination.">
-        <button style="width: 100px; height: calc(100% - 4px); border-radius: 10px; position: absolute; top: 2px; right: 3px; color: #000; font-family: Montserrat; background-color: #d6d6d6; border: none;" id="searchInputBox">Search!</button>
+      <div style="width: 90%; height: 40px; position: absolute; bottom: 35px; left: 50%; margin-left: -45%; text-align: center;">
+        <input id="searchDest" type="text" style="border: 2px solid; border-radius: 10px; width: 100%; height: 40px; font-family: Montserrat; text-align: center;" placeholder="Search for a destination.">
+        
       </div>
       </center>
       <p id="advText" style="position: absolute; bottom: -10px; color: white; font-family: Montserrat; font-weight: 600;width: 300px; left: 50%; margin-left: -150px; font-size: 13px; user-select: none;" onclick="showAdvancedOptions()">Search with Advanced Options ▼</p>
@@ -105,7 +105,15 @@
     </div>
       <button id="other-options" style="display: none; background-color: #e60f0f; width: 80%; color: white; height: 35px; border-radius: 12px; margin-top: 20px; font-family: Montserrat; border: 1px solid transparent;">CHECK OUT OTHER OPTIONS</button>
     </div>
+
+    <!--bar-->
+    <div style="background-color: white; padding-top: 5px; padding-bottom: 5px; width: 100%; position: fixed; bottom: 0px;">
+    <img src="house.png" onclick="window.location='/home'" style="margin-left: 20%; float: left; display: inline-block; width: 35px;">
+    <div onclick="window.location='/book-a-flight'" style="box-shadow: 0 0 10px rgba(230, 15, 15, 0.6); display: inline-block; width: 40px; height: 40px; border-radius: 5px; color: white; font-size: 35px; font-family: Montserrat; background-color: #e60f0f;">+</div>
+    <img src="greyairplane.png" onclick="window.location='/my-flights'" style="margin-right: 20%; float: right; display: inline-block; width: 35px;">
+</div>
     </center>
+
       <!--navigation-->
       <div id="unanimate-nav-def" style="width: 250px; background-color: #d6d6d6; height: 100vh; position: absolute; top: 0px; left: 0px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); margin-left: -260px">
           <img src="backArrowNav.png" style="position: absolute; top: 30px; right: 30px; width: 10px;" onclick="unanimateNav()">
@@ -173,11 +181,7 @@
         socket.emit('request-dest-data')
       } 
     })
-
-    document.getElementById('searchInputBox').addEventListener('click', () => {
-      socket.emit('request-dest-data')
-    })
-
+    
     socket.on('dest-req-return', (data) => {
       var search = document.getElementById('searchDest').value
       if (search === ''){
@@ -236,7 +240,7 @@
                 var coverDiv = document.createElement('div')
                 coverDiv.style.width = "93%"
                 coverDiv.style.height = "60px"
-                coverDiv.style.borderRadius = "7px"
+                coverDiv.style.borderRadius = "5px"
                 if (every > 1) {
                   coverDiv.style.boxShadow = "0 0 0px rgba(0, 0, 0, 0.4)"
                   coverDiv.style.borderLeft = "10px solid #ffffff"
@@ -337,7 +341,7 @@
                     var coverDiv = document.createElement('div')
                     coverDiv.style.width = "93%"
                     coverDiv.style.height = "60px"
-                    coverDiv.style.borderRadius = "7px"
+                    coverDiv.style.borderRadius = "5px"
                     if (resCount > 1) {
                       coverDiv.style.boxShadow = "0 0 0px rgba(0, 0, 0, 0.4)"
                       coverDiv.style.borderLeft = "10px solid #ffffff"
