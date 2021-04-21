@@ -73,7 +73,7 @@
     </div>
     <div style="background-color: transparent; text-align: center; width: 100%; height: auto; position: absolute; margin-bottom: 20px;">
       <p onclick="clearFlights()" style="display: inline-block; font-size: 20px; color: #e60f0f; width: auto; font-family: Montserrat;">🗑 </p>
-      <p onclick="document.getElementById('noFlights').style.display = 'block'" style="display: inline-block; font-size: 15px; color: #e60f0f; width: auto; font-family: Montserrat;">Clear Flights</p>
+      <p onclick="document.getElementById('noFlights').style.display = 'block'" style="display: inline-block; font-size: 15px; color: #e60f0f; width: auto; font-family: Montserrat; margin-bottom: 60px;">Clear Flights</p>
       </div>
 
     <!--bar-->
@@ -262,7 +262,9 @@
         checkin.style.border = "1px solid white"
         checkin.style.borderRadius = "5px"
         checkin.style.display = "none"
-        checkin.addEventListener('click', () => window.location = '/check-in?name=' + name + "&username=" + localStorage.getItem('username') + "&date=" + date + "&type=" + type + "&short=" + document.getElementById('flightShort').innerHTML)
+        checkin.addEventListener('click', () => {
+          window.location = '/check-in?name=' + name + "&username=" + localStorage.getItem('username') + "&date=" + date + "&type=" + type + "&short=" + document.getElementById('flightShort').innerHTML
+        })
         document.getElementById(newId).appendChild(checkin)
       } else {
 

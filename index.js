@@ -1,5 +1,6 @@
 const request = require('request');
 const express = require('express');
+const session = require('express-session')
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
@@ -15,6 +16,14 @@ const Cryptr = require('cryptr')
 const cryptr = new Cryptr('cIeJJQpIpHo95UL9SZyq')
 const bodyParser = require('body-parser')
 const ejs = require('ejs')
+
+app.use(session({
+  secret: 'Di@G0n@lStU0i0$',
+  saveUnititialized: true,
+  resave: false,
+  maxAge: null
+}))
+
 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
@@ -676,3 +685,4 @@ app.get('/sign-up/auth', (req, res) => {
 http.listen(3000, () => {
   console.log(chalk.green("The server is up on port " + chalk.yellow("3000")))
 })
+const mySecret = process.env['EMAIL']

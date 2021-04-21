@@ -121,7 +121,16 @@
 
   function forwardSave() {
     window.location = "/my-flights?name=" + name + "&date=" + date + "&flightType=" + flightType + "&short=" + flightShort
+    if (Notification.permission !== "granted") {
+      Notification.requestPermission();
+    }
+
+    var notification = new Notification('You booked a flight!', {
+      icon: 'https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/published/ace-logo-new.png?1594390182',
+      body: 'Thanks for booking with Ace. You should see your flight appear in your flights.'
+    })
   }
+
   
 </script>
 </html>
