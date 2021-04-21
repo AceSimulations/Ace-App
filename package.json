@@ -1,26 +1,35 @@
 {
-  "name": "Ace-App",
-  "version": "2.0.0",
+  "name": "Ace-App-Version-2",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@replit/database": "^2.0.0",
+    "@replit/database": "^2.0.1",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
-    "chalk": "^4.0.0",
+    "chalk": "^4.1.1",
     "cryptr": "^6.0.2",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "hbs": "^4.1.1",
-    "nodemailer": "^6.4.11",
+    "hbs": "^4.1.2",
+    "nodemailer": "^6.5.0",
     "request": "^2.88.2",
-    "socket.io": "^2.3.0"
-  }
+    "socket.io": "^2.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AceAirlines/Ace-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AceAirlines/Ace-App/issues"
+  },
+  "homepage": "https://github.com/AceAirlines/Ace-App#readme"
 }

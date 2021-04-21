@@ -1,5 +1,9 @@
 # Version Control
 
+##### **Version 1.12.2**
+> **Latest Stable Version as of 4-21-21**
+> Fixed major crashing bug
+
 ##### **Version 1.12.1**
 > **Latest Stable Version as of 4-16-21**
 > Home UI completed
