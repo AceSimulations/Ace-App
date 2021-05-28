@@ -36,7 +36,7 @@ http://ping.mat1.repl.co/#
 				<center>
 					<img src="aceshadowlogo.png" style="width: 170px; margin-top: 15px;">
             <form style="margin-top: 40px;" id="login-submit">
-              <p id="bad-username" style="width: 80%; padding: 0px; color: orange; font-family: montserrat; background-color: transparent; border-radius: 20px; display: none;">Your username is incorrect or blank.</p>
+              <i id="bad-username" style="text-align: center; width: 100%; padding: 0px; color: orange; position: absolute; top: -60px; font-family: montserrat; background-color: transparent; border-radius: 20px; display: none;">Your username is incorrect or blank.</i>
              
               <fieldset style="width: 90%; border: 3px solid #e60f0f; text-align: left; border-radius: 20px; height: 4vh; min-height: 25px;">
               <p style="background-color: transparent; color: #e60f0f; padding: 0px; margin: 0px; margin-top: -5px; font-family: Montserrat; font-size: 12px;">Username</p>
@@ -92,10 +92,12 @@ http://ping.mat1.repl.co/#
 
   socket.on('login-password-fail', () => {
     document.getElementById('bad-username').style.display = "block"
+    document.getElementById('bad-username').textContent = "Your password is incorrect or blank."
   })
 
   socket.on('login-username-fail', () => {
     document.getElementById('bad-username').style.display = "block"
+    document.getElementById('bad-username').textContent = "Your username is incorrect or blank."
   })
   var windowCheck = false;
   function login(){

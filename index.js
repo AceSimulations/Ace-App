@@ -50,28 +50,8 @@ app.set('views', 'public/views')
 
 io.on('connection', (socket) => {
 
-  socket.on('send-message', (username, message, type, user) => {
-    try {
-      var messages = JSON.parse(fs.readFileSync('public/userinfo/users/' + username + '/messages.json'))
-      var messageData = {
-        username,
-        message,
-        type,
-        user
-      }
-      messages.push(messageData)
-      fs.writeFileSync('public/userinfo/users/' + username + '/messages.json', JSON.stringify(messages))
-      socket.emit('recieve-message', messageData)
-    } catch (e) {
-      var messageData = [{
-        username,
-        message,
-        type,
-        user
-      }]
-      fs.writeFileSync('public/userinfo/users/' + username + '/messages.json', JSON.stringify(messageData))
-      socket.emit('recieve-message', messageData)
-    }
+  socket.on('notify', (content) => {
+    console.log(content)
   })
   socket.on('user-typing', () => {
 
@@ -295,6 +275,33 @@ app.get('/boardingpass', (req, res) => {
       flightshort = index.flightShort
       var arrShort = flightshort.slice(4, 7)
       res.render('boardingpass.hbs', {
+        name,
+        username,
+        date: req.query.date,
+        type,
+        arrival: arrShort
+      })
+    }
+  })
+})
+
+app.get('/print', (req, res) => {
+  console.log('\n\nPrint\n\n')
+  console.log(req.query)
+  var username = req.query.username
+  var months = ["", "January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  var name = req.query.name
+  var capsName = name.toUpperCase()
+  var type = req.query.type
+  var flightshort = ""
+  var data = JSON.parse(fs.readFileSync('public/userinfo/users/' + req.query.username + '/' + req.query.username + ".json"))
+  var username = req.query.username
+  data.forEach((index) => {
+    console.log(index.flightName, name)
+    if (index.flightName === name) {
+      flightshort = index.flightShort
+      var arrShort = flightshort.slice(4, 7)
+      res.render('print.hbs', {
         name,
         username,
         date: req.query.date,

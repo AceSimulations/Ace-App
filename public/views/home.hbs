@@ -36,6 +36,20 @@
       border: 0px solid;
       background-color: #d1d1d1;
     }
+    @keyframes grow{
+      0%{
+        width: 0;
+        height: 0;
+        top: 30%; 
+        right: 0px;
+      }
+      100%{
+        width: calc(100% - 30px);
+        top: 15%; 
+        right: 15px;
+        height: calc(100% - 15vh);
+      }
+    }
   </style>
   <body style="margin: 0px;">
     <center>
@@ -50,7 +64,7 @@
     <div style="background-color: e60f0f; width: 100%; height: 20%;"></div>
     <div style="background-color: white; position: absolute; left: 5%; top: 12%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); width: 90%; min-height: 20%; border-radius: 7px; color: #e60f0f; padding-top: 50px; font-family: Montserrat; font-size: 1.3em;"><div style="background-image: url(airplaneLogo.png); background-image: cover; background-size: cover; border: 2px solid white; background-repeat:no-repeat; background-position:center center; box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); position: absolute; top: -37.5px; left: calc(50% - 37.5px); background-color: white; width: 75px; height: 75px; border-radius: 75px;"></div>Welcome to Ace Airlines<br></br><b style="color: #e60f0f; font-size: 2em; font-family: Montserrat;">Admin</b></div>
 
-    <div style="position: relative; top: 80px;">
+    <div style="position: relative; top: 13vh;">
       <b style="float: left; margin-left: 5%; font-size: 1em; font-family: Montserrat;">See News from Ace Airlines</b>
     <div onclick="window.location = '/news'" style="position: relative; top: 35px; background-color: white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); width: 90%; min-height: 17%; border-radius: 7px;">
       <img src="note.png" style="position: absolute; top: 10px; left: 10px; width: 20px;">
@@ -59,9 +73,9 @@
       <p style="text-align: left; color: #e60f0f; font-family: Montserrat; font-size: 1.2em; position: absolute; top: 20px; left: 10px; ">Ace Airlines Releases Its new app...</p>
     </div>
 
-    <img src="dotsHome.png" style="position: absolute; top: 160px; left: calc(50% - 25px); width: 50px;">
+    <img src="dotsHome.png" style="position: absolute; top: 25vh; left: calc(50% - 25px); width: 50px;">
 
-    <div onclick="window.location = 'https://flyaceairline.weebly.com/a-program-info.html'" id="imageElmt" style="background-image: url(image0.png); background-size: cover; border: 2px solid #e60f0f; background-repeat:no-repeat; background-position: center center; position: relative; top: 75px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); width: 90%; min-height: 17%; border-radius: 7px;">
+    <div onclick="window.location = 'https://flyaceairline.weebly.com/a-program-info.html#app'" id="imageElmt" style="background-image: url(image0.png); background-size: contain; border: 2px solid #e60f0f; background-repeat:no-repeat; background-position: center center; position: relative; top: 13vh; box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); width: 90%; min-height: 17%; border-radius: 7px;">
     </div>
     </div>
    
@@ -74,7 +88,8 @@
 
     </center>
       <!--navigation-->
-      <div id="unanimate-nav-def" style="width: 250px; background-color: #d6d6d6; height: 100vh; position: absolute; top: 0px; left: 0px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); margin-left: -260px">
+      <div id="blurid" style="display: none; z-index: 500; position: absolute; top:0px; right: 0px; background-color: transparent; backdrop-filter: brightness(.5); height: 100%; width: 100vw;"></div>
+      <div id="unanimate-nav-def" style="z-index: 1000; width: 250px; background-color: #d6d6d6; height: 100vh; position: absolute; top: 0px; left: 0px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); margin-left: -260px">
           <img src="backArrowNav.png" style="position: absolute; top: 30px; right: 30px; width: 10px;" onclick="unanimateNav()">
           <img src="acelogo.png" style="width: 120px; margin: 20px;">
           <h1 style="font-size: 170%; color: #e60f0f; margin: 0px; margin-left: 20px; font-family: Montserrat; margin-right: 10px;">Navigation</h1>
@@ -100,23 +115,166 @@
         <div id="notificationCenter" style="width: 100%; text-align: left; float: left;">
 
 <!--Main Notifications-->
-          <div style="padding: 0px; margin: 0px; margin-top: 10px; margin-left: 5px; margin-right: 5; border: 1px solid #e60f0f; border-radius: 3px; height: 45px;" id="notify1">
+          <div style="display: none; padding: 0px; margin: 0px; margin-top: 10px; margin-left: 5px; margin-right: 5; border: 1px solid #e60f0f; border-radius: 3px; height: 45px;" id="notify1">
         <p style="vertical-align:middle; margin: 0px; padding: 0px; margin-top: 10px; color: #e60f0f; display: inline-block; font-family: Montserrat; font-size: 15px;"><img src="Airplane.png" style="vertical-align:middle; display: inline-block;margin: 0px;  margin-left: 10px; margin-right: 10px; border: 1px solid #e60f0f; border-radius: 5px; width: 18px;">You Booked A Flight!<p onclick="bookNotify()" style="margin: 0px; margin-top: 10px; display: inline-block; float: right; margin-right: 5px; ">🗑️</p></p>
           </div>
 
-          <div style="padding: 0px; margin: 0px; margin-top: 10px; margin-left: 5px; margin-right: 5; border: 1px solid #e60f0f; border-radius: 3px; height: 45px;" id="notify2">
+          <div style="display: none; padding: 0px; margin: 0px; margin-top: 10px; margin-left: 5px; margin-right: 5; border: 1px solid #e60f0f; border-radius: 3px; height: 45px;" id="notify2">
         <p style="vertical-align:middle; margin: 0px; padding: 0px; margin-top: 10px; color: #e60f0f; display: inline-block; font-family: Montserrat; font-size: 15px;"><img src="Airplane.png" style="vertical-align:middle; display: inline-block;margin: 0px;  margin-left: 10px; margin-right: 10px; border: 1px solid #e60f0f; border-radius: 5px; width: 18px;">You Checked into Your Flight<p onclick="checkNotify()" style="margin: 0px; margin-top: 10px; display: inline-block; float: right; margin-right: 5px; ">🗑️</p></p>
           </div>
           <!--End of Main Notifications-->
         </div>
       </div>
     </div>
+
+    <!--chat-->
+        <div style="position: fixed; top: 30%; right: 0px; border-radius: 25% 0px 0px 25%;  width: 50px; height: 60px; background-color: #e60f0f; box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);" id="chat" onclick="openChat()">
+      <center>
+      <img src="chat.png" style="width: 30px; margin-right: 2px; margin-top: 20px;">
+      </center>
+    </div>
+    <div id="chatBox" style="animation: grow 0.5s forwards; position: fixed; top: 30%; right: 0px; height: calc(100% - 90px); width: calc(100% - 30px); border-radius: 15px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); background-color: white; display: none; flex-direction: column;">
+      <p onclick="chat.close()" style="font-family: Montserrat; font-weight: 600; margin: 0px; padding: 15px; background-color: #E60F0F; color: white; border-top-left-radius: 15px; border-top-right-radius: 15px;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">You are chatting with: <span id="chatter">Ben Lambertson</span></p>
+      <div id="chatBoxMain" style="width: 100%; flex-grow: 1; overflow: none; overflow-y: scroll; background-color: #f3f3f3;"></div>
+      <input type="text" style="padding: 15px; font-family: montserrat; border: none; border-top: 2px solid #e6e6e6; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;" onkeyup="chatDown(event)" id="chat-input" placeholder="Your message here...">
+    </div>
   </body>
 <script src="/socket.io/socket.io.js"></script>
 <script src="script.js"></script>
 <script>
 
-var notification = '2';
+  var socket = io()
+
+    var windowCheck = false;
+
+    var botType = false
+
+    var chat = {
+      send: function(username, message, type, chatter) {
+        if (botType) {
+          console.log('BotType [  Set  ]')
+        } else {
+          socket.emit('send-message', username, message, type, chatter)
+        }
+      },
+      close: function() {
+        document.getElementById('chatBox').style.display = "none";
+        document.getElementById('chat').style.display = "block";
+      },
+      typing: function(username, message, user) {
+        if (user === 'bot') {
+          botType = true
+          var wrapper = document.createElement('div')
+          wrapper.style.width = "100%"
+          wrapper.style.height = "auto"
+          wrapper.style.textAlign = "left"
+          wrapper.id = "typing" + document.getElementById('chatBoxMain').childElementCount
+          document.getElementById('chatBoxMain').appendChild(wrapper)
+
+          var post = document.createElement('p')
+          post.style.padding = "10px"
+          post.style.width = "auto"
+          post.style.margin = "15px"
+          post.style.color = "#1a1a1a"
+          post.style.textAlign = "left"
+          post.style.display = "inline-block"
+          post.style.fontFamily = "Montserrat"
+          post.style.backgroundColor = "#FFFFFF"
+          post.style.borderRadius = "10px"
+          post.textContent = "Ace Bot is typing..."
+          if (document.getElementById('chatBoxMain').childElementCount > 3) {
+
+          } else {
+            document.getElementById("typing" + (document.getElementById('chatBoxMain').childElementCount - 1).toString()).appendChild(post)
+            setTimeout(() => {
+              botType = false
+              var element = document.getElementById("typing" + (document.getElementById('chatBoxMain').childElementCount - 1).toString())
+              element.parentNode.removeChild(element)
+              chat.send(username, message, 'message', 'bot')
+            }, 2000) 
+          }
+        } else {
+          socket.emit('user-typing', user)
+        }
+      },
+      recieve: function(username, message, type, chatter) {
+        if (chatter === 'bot' || chatter === 'professional') {
+          var wrapper = document.createElement('div')
+          wrapper.style.width = "100%"
+          wrapper.style.height = "auto"
+          wrapper.style.textAlign = "left"
+          wrapper.id = "message" + document.getElementById('chatBoxMain').childElementCount
+          document.getElementById('chatBoxMain').appendChild(wrapper)
+
+          var post = document.createElement('p')
+          post.style.padding = "10px"
+          post.style.width = "auto"
+          post.style.margin = "15px"
+          post.style.color = "#1a1a1a"
+          post.style.textAlign = "left"
+          post.style.display = "inline-block"
+          post.style.fontFamily = "Montserrat"
+          post.style.backgroundColor = "#FFFFFF"
+          post.style.borderRadius = "10px"
+          post.textContent = message
+          document.getElementById("message" + (document.getElementById('chatBoxMain').childElementCount - 1).toString()).appendChild(post)
+          document.getElementById('chatBoxMain').scrollTop = document.getElementById('chatBoxMain').scrollHeight
+        } else {
+          document.getElementById('chat-input').value = ""
+          var wrapper = document.createElement('div')
+          wrapper.style.width = "100%"
+          wrapper.style.height = "auto"
+          wrapper.style.textAlign = "right"
+          wrapper.id = "message" + document.getElementById('chatBoxMain').childElementCount
+          document.getElementById('chatBoxMain').appendChild(wrapper)
+
+          var post = document.createElement('p')
+          post.style.padding = "10px"
+          post.style.width = "auto"
+          post.style.margin = "15px"
+          post.style.color = "#1a1a1a"
+          post.style.display = "inline-block"
+          post.style.textAlign = "right"
+          post.style.fontFamily = "Montserrat"
+          post.style.backgroundColor = "#e6e6e6"
+          post.style.borderRadius = "10px"
+          post.textContent = message
+          document.getElementById("message" + (document.getElementById('chatBoxMain').childElementCount - 1).toString()).appendChild(post)
+          var chatNumber = 1;
+          if (document.getElementById('message' + chatNumber).textContent == 'hi') {
+            chat.typing(localStorage.getItem('username'), "Hello", 'bot')
+            chatNumber + 2;
+          }
+          else {
+            chat.typing(localStorage.getItem('username'), "Thank you for your interest in the Ace App! An Ace Airline representative will be with you shortly.", 'bot')
+            chatNumber + 2;
+          }
+          document.getElementById('chatBoxMain').scrollTop = document.getElementById('chatBoxMain').scrollHeight
+        }
+      }
+    }
+
+    socket.on('recieve-message', (data) => {
+      chat.recieve(data.username, data.message, data.type, data.user)
+    })
+
+    function openChat() {
+      document.getElementById('chatBox').style.display = "flex"
+      document.getElementById('chat').style.display = "none"
+      document.getElementById('chatter').textContent = "Ace Bot"
+      chat.typing(localStorage.getItem('username'), "How can we help you today?", 'bot')
+    }
+
+    function chatDown(e){
+      
+      if (e.keyCode === 13) {
+        chat.send(localStorage.getItem('username'), document.getElementById('chat-input').value, 'message', 'user')
+      } else {
+        chat.typing(localStorage.getItem('username'))
+      }
+    }
+
+var notification = '0';
 
   function notifications() {
     document.getElementById('notifyNum').textContent = notification;
@@ -152,12 +310,15 @@ var notification = '2';
     time++
     if (time == 1){
       document.getElementById("unanimate-nav-def").id = "animate-nav";
+      document.getElementById('blurid').style.display = 'block';
     } else {
       document.getElementById("unanimate-nav").id = "animate-nav";
+      document.getElementById('blurid').style.display = 'block';
     }
   }
   const unanimateNav = () => {
     document.getElementById("animate-nav").id = "unanimate-nav";
+    document.getElementById('blurid').style.display = 'none';
   }
   function profile() {
     document.getElementById("profileDiv").style.display = "block"

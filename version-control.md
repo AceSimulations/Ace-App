@@ -1,4 +1,4 @@
-# Version Control
+# Change Log
 
 ##### **Version 1.12.2**
 > **Latest Stable Version as of 4-21-21**
