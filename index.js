@@ -51,7 +51,10 @@ app.set('views', 'public/views')
 io.on('connection', (socket) => {
 
   socket.on('notify', (content) => {
-    console.log(content)
+    var directory = fs.readdirSync(path.join(__dirname, `public/userinfo/users/${content.username}`))
+    var find = directory.find((user) => user.split('.')[0] === 'message')
+    var preContent = find ? JSON.parse(fs.readFileSync(__dirname, `public/userinfo/users/${content.username}`)) : []
+    console.log(preContent)
   })
   socket.on('user-typing', () => {
 
@@ -615,6 +618,7 @@ app.get('/resource', (req, res) => {
 })
 
 app.get('/confirm-book', (req, res) => {
+  console.log(req.session)
   var name = req.query.name
   var date = req.query.date
   var type = req.query.type

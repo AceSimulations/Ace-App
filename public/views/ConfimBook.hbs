@@ -129,7 +129,7 @@
       Notification.requestPermission();
     }
 
-    socket.emit('notify', { type: 'book' })
+    socket.emit('notify', { type: 'book', username: localStorage.getItem('username') })
 
     var notification = new Notification('You booked a flight!', {
       icon: 'https://flyaceairline.weebly.com/uploads/1/2/4/2/124276951/published/ace-logo-new.png?1594390182',
